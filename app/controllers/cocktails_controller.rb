@@ -42,7 +42,7 @@ class CocktailsController < ApplicationController
   end
 
   def set_ingredient
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.new
   end
 
   # def set_dose
