@@ -1,2 +1,14 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+  <div class="card mb-3">
+    <!-- <img src="https://source.unsplash.com/300x200/cocktail?<%=  %>" class="card-img-top" alt="..."> -->
+    <div class="card-body">
+    <div class="col-12 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/300x200/?cocktail&<%= @cocktail.name %>)"></div>
+      <h5 class="card-title mt-3"><%= @cocktail.name %></h5>
+      <% @cocktail.doses.each do |dose| %>
+      <p class="card-text"><%= dose.description %></p>
+      <% end %>
+      <%= link_to "Novo ingrediente",  new_cocktail_dose_path(@cocktail), class: 'btn btn-outline-success' %>
+    </div>
+    <%= link_to 'Voltar', root_path, class: 'btn btn-outline-secondary pl-3' %>
+  </div>
+</div>

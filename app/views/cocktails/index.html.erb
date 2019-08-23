@@ -1,15 +1,15 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x700/?cocktail);">
-  <div class="container">
-    <h1>O que vamos beber hoje?</strong>!</h1>
-    <p>Veja abaixo os melhoes drinks que existem!!! Na nossa lista, claro!.</p>
-    <%= link_to "Crie um novo drink!", new_cocktail_path, class: "btn btn-ghost" %>
-  </div>
-</div>
-    <div class="row justify-content-around">
-      <!-- <div class="align"></div> -->
-      <% @cocktails.each do |cocktail| %>
-      <div class="col-3 m-1 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/300x200/?<%= cocktail.name %>)">
-        <%= cocktail.name %>
-      </div>
-      <% end %>
+<div class="row justify-content-around">
+  <div class="banner col-12" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x700/?cocktail);">
+    <div class="container">
+      <h1>O que vamos beber hoje?</strong>!</h1>
+      <p>Veja abaixo os melhoes drinks que existem!!! Na nossa lista, claro!.</p>
+      <%= link_to "Crie um novo drink!", new_cocktail_path, class: "btn btn-ghost" %>
     </div>
+  </div>
+
+  <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-6 col-md-4 col-lg-3 m-1 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/300x200/?cocktail&<%= cocktail.name %>)">
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: 'decoration-none' %>
+      </div>
+  <% end %>
+</div>

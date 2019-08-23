@@ -1,4 +1,8 @@
-<%= simple_form_for [@cocktail, @ingredient, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
+<!-- simple_form_for(@user, html: { class: 'form-inline' }) do |form| -->
+<div class="container">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :ingredient_id, collection: Ingredient.all %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
