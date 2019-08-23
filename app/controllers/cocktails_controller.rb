@@ -28,7 +28,9 @@ class CocktailsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @cocktail.destroy
+    redirect_to root_path
   end
 
   private

@@ -6,9 +6,11 @@
       <h5 class="card-title mt-3"><%= @cocktail.name.capitalize %></h5>
       <% @cocktail.doses.each do |dose| %>
       <h4 class="card-text"><%= Ingredient.find(dose.ingredient_id).name.capitalize %></h4>
-      <p><%= dose.description %></p>
+      <p><%= dose.description %> <%= link_to "",  dose_path(dose), method: :delete, class: 'fas fa-trash' %></p>
+
       <% end %>
       <%= link_to "Novo ingrediente",  new_cocktail_dose_path(@cocktail), class: 'btn btn-outline-success' %>
+      <%= link_to "Deletar drink",  cocktail_path, method: :delete, class: 'btn btn-outline-danger' %>
     </div>
     <%= link_to 'Voltar', root_path, class: 'btn btn-outline-secondary pl-3' %>
   </div>
