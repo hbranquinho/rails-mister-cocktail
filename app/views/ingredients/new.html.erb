@@ -1,0 +1,10 @@
+<div class="container mt-4">
+  <div class="card">
+  <%= simple_form_for [@dose, @ingredient] do |f| %>
+
+    <%= f.error_notification message: f.object.errors[:ingredient].to_sentence if f.object.errors[:ingredient].present? %>
+
+    <%= f.input :name %>
+  <% end %>
+  <%= link_to 'Voltar', cocktail_path(@dose), class: 'btn btn-outline-secondary mt-3 pl-3' %>
+</div>
