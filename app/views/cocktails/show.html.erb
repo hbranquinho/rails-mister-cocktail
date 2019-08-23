@@ -2,7 +2,7 @@
   <div class="card mb-3">
     <!-- <img src="https://source.unsplash.com/300x200/cocktail?<%=  %>" class="card-img-top" alt="..."> -->
     <div class="card-body">
-    <div class="col-12 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/300x200/?cocktail&<%= @cocktail.name %>)"></div>
+    <div class="col-12 card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')"></div>
       <h5 class="card-title mt-3"><%= @cocktail.name.capitalize %></h5>
       <% @cocktail.doses.each do |dose| %>
       <h4 class="card-text"><%= Ingredient.find(dose.ingredient_id).name.capitalize %></h4>

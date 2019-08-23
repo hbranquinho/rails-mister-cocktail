@@ -1,7 +1,7 @@
 # puts 'Destroy items'
 
-# Cocktail.destroy_all
-# Ingredient.destroy_all
+Cocktail.destroy_all
+Ingredient.destroy_all
 
 # puts 'Create Cocktails'
 # ca = Cocktail.create(name: 'Caipirinha')
