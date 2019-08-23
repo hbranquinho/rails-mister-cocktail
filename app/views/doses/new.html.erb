@@ -1,8 +1,14 @@
 <!-- simple_form_for(@user, html: { class: 'form-inline' }) do |form| -->
-<div class="container">
+
+<div class="container mt-4">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+    <%= f.error_notification message: f.object.errors[:ingredient].to_sentence if f.object.errors[:ingredient].present? %>
+
     <%= f.input :description %>
-    <%= f.input :ingredient_id, collection: Ingredient.all %>
-    <%= f.button :submit %>
+    <%= f.input :ingredient, collection: Ingredient.all %>
+    <%= f.button :submit, class: 'btn btn-primary'%><%= link_to "Voltar a #{@cocktail.name}", cocktail_path(@cocktail), class: 'decoration-none pl-3' %>
   <% end %>
+  <!-- <%= link_to 'Voltar', root_path, class: 'btn btn-outline-secondary pl-3' %> -->
+
 </div>

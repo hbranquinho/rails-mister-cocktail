@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'cocktails#index'
   resources :cocktails do
     resources :doses, only: %i[index new create]
+    resources :ingredientes, only: :show
   end
   resources :doses, only: :destroy do
     resources :ingredientes, only: %i[create new]

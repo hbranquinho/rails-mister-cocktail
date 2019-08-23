@@ -7,8 +7,8 @@ puts 'Create Cocktails'
 ca = Cocktail.create(name: 'Caipirinha')
 cb = Cocktail.create(name: 'PiñaColada')
 cc = Cocktail.create(name: 'GinTônica')
-cc = Cocktail.create(name: 'Orange')
-cc = Cocktail.create(name: 'Pineaple')
+cd = Cocktail.create(name: 'Orange')
+ce = Cocktail.create(name: 'Pineaple')
 
 puts 'Create Ingredients'
 ia = Ingredient.create(name: "lemon")
